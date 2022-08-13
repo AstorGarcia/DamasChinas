@@ -1,0 +1,2 @@
+C:\Users\Astorkpo\source\repos\ConsoleApplication7\ConsoleApplication7\x64\Debug\ConsoleApplication7.vcxproj.AssemblyReference.cache
+C:\Users\Astorkpo\source\repos\ConsoleApplication7\ConsoleApplication7\x64\Debug\ConsoleApplication7.vcxproj.SuggestedBindingRedirects.cache
