@@ -8,12 +8,13 @@
 using namespace std;
 using namespace System;
 
+//Estructura para jugador 1 y 2
 struct Jugador {
 	char simbolo;
 	int x, y;
 };
 
-
+//Tablero Damas Chinas
 char Tablero[23][57] = {
 	{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
 	{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
@@ -40,7 +41,7 @@ char Tablero[23][57] = {
 	{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','N',' ','N',' ','N',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
 };
 
-
+//Donde se ingresa el nombre de los jugadores
 void JugadoresNombres(char* nom1, char* nom2) {
 
 	cout << "Ingresar nombre de jugador:" << endl;
@@ -48,6 +49,7 @@ void JugadoresNombres(char* nom1, char* nom2) {
 	cout << "Ingresar nombre de jugador:" << endl;
 	cin >> nom2;
 }
+//Accion de dado para saber quien empieza primero
 void Dado(int& P1, int& P2, char* nom1, char* nom2) {
 	int dado1;
 	int dado2;
@@ -74,6 +76,7 @@ void Dado(int& P1, int& P2, char* nom1, char* nom2) {
 		cout << "\n Puntaje mas alto:" << nom2 << endl;
 	}
 }
+//Se selecciona la posicion en que cada jugador va a jugar
 void SeleccionarFicha(char& F1, char& F2, char* nom1, char* nom2, int pP1, int pP2, int&T) {
 	int opcion;
 
@@ -106,7 +109,8 @@ void SeleccionarFicha(char& F1, char& F2, char* nom1, char* nom2, int pP1, int p
 			    F2 = 'C';break;
 		case 5: F1 = 'E';
 			    F2 = 'F';break;
-		case 6: F1 = 'F';F2 = 'E';
+		case 6: F1 = 'F';
+				F2 = 'E';break;
 		}
 	}
 
@@ -140,9 +144,11 @@ void SeleccionarFicha(char& F1, char& F2, char* nom1, char* nom2, int pP1, int p
 			F2 = 'C';break;
 	case 5: F1 = 'E';
 			F2 = 'F';break;
-	case 6: F1 = 'F';F2 = 'E';
+	case 6: F1 = 'F';
+		    F2 = 'E';break;
 	}
 };
+//Se asigna el caracter en cada parte respectiva del tabero
 void PosicionTablero(char F) {
 	switch (F)
 	{
@@ -181,6 +187,7 @@ void PosicionTablero(char F) {
 		break;
 	}
 };
+//Muestra el tablero
 void mostrarTablero() {
 
 	for (int i = 0;i < 23;i++)
@@ -203,6 +210,7 @@ void mostrarTablero() {
 	}
 	
 }
+// Muestra las filas y columnas a partir del abcdario
 void FilasColumnas() {
 	Console::ForegroundColor = ConsoleColor::Yellow;
 
@@ -250,6 +258,7 @@ void FilasColumnas() {
 	Console::SetCursorPosition(2, 20);cout << "P";
 	Console::SetCursorPosition(2, 21);cout << "Q";
 }
+//Cuadro que muestra la posicion de la ficha elegida por cualquiera de los dos jugadores
 void DatosJugadores() {
 	Console::SetCursorPosition(76, 9);
 	cout << "_________________________________________________";
@@ -313,6 +322,7 @@ void DatosJugadores() {
 	Console::SetCursorPosition(76, 17);
 	cout << "realizados:";
 }
+//La posicion anterior de donde estaba una ficha que moviste se convierte en una "O"
 void PintarPosAnt(Jugador* P)
 {
 	for (int i = 0; i < 19; i++) {
@@ -323,12 +333,14 @@ void PintarPosAnt(Jugador* P)
 	}
 
 }
+//Se guarda los datos de la estructura del jugador por turno
 void Caracteristicas(Jugador* P, char c, int xpos, int ypos) {
 	P->simbolo = c;
 	P->x = xpos;
 	P->y = ypos;
 
 }
+//Se determina los bordes donde no se pueden ir (N) ni los espacion en blanco, despues determina si los saltos son de un casillero o de dos
 void EvaluarPosTablero(Jugador* P,int x, int y, bool& salir) {
 	bool saltoUno = false, saltoDoble = false, band = false;
 
@@ -433,6 +445,7 @@ void EvaluarPosTablero(Jugador* P,int x, int y, bool& salir) {
 	}
 	if (band == false) { Console::SetCursorPosition(2, 31), cout << "No se puede realizar el movimiento"; _getch(); }
 };
+//Es donde se almacena donde va a mover el jugador la fucha correspondiente
 void movimientoFicha(Jugador* P)
 {
 	int x, y;
@@ -458,7 +471,6 @@ void movimientoFicha(Jugador* P)
 	
 
 	EvaluarPosTablero(P, x, y, salir);
-	Console::SetCursorPosition(2, 32);cout << P->x << "-" << P->y<<"-"<<P->simbolo;
 	Console::SetCursorPosition(2, 25);cout << "                                                  ";
 	Console::SetCursorPosition(2, 26);cout << "                                                  ";
 	Console::SetCursorPosition(2, 27);cout << "                                                  ";
@@ -466,6 +478,7 @@ void movimientoFicha(Jugador* P)
 	Console::SetCursorPosition(2, 29);cout << "                                                  ";
 
 }
+//En la direccion donde el jugador mueve la ficha se torna de la letra de la misma
 void PinterPosAct(Jugador* P) {
 	for (int i = 0; i < 19; i++)
 	{
@@ -475,6 +488,7 @@ void PinterPosAct(Jugador* P) {
 		}
 	}
 }
+//Se escoje que ficha vas a jugar mediante las filas y columnos 
 void EscogerFicha(Jugador* P, char* nombre, char ficha, int T) 
 {
 	int opc;
@@ -495,7 +509,7 @@ void EscogerFicha(Jugador* P, char* nombre, char ficha, int T)
 			
 		
 		Console::SetCursorPosition(2, 25);
-		cout << nombre << "ingresa la ficha en la columna que quieras mover:";
+		cout << nombre <<" " << "ingresa la ficha en la columna que quieras mover:";
 		cin >> columna;
 
 		switch (toupper(columna))
@@ -528,7 +542,7 @@ void EscogerFicha(Jugador* P, char* nombre, char ficha, int T)
 		}
 
 		Console::SetCursorPosition(2, 26);
-		cout << nombre << "Ingresa la ficha en la fila que quieras mover:";
+		cout << nombre <<" " << "Ingresa la ficha en la fila que quieras mover:";
 		cin >> fila;
 
 		switch (toupper(fila))
@@ -585,6 +599,7 @@ void EscogerFicha(Jugador* P, char* nombre, char ficha, int T)
 		Console::SetCursorPosition(115, 12); cout << "    ";
 	}
 }
+//Declara el ganador
 bool Ganador(Jugador* P)
 {
 	for (int i = 0;i < 19;i++) 

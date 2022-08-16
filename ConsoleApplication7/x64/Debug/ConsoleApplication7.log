@@ -1,10 +1,10 @@
 ﻿  ConsoleApplication7.cpp
-C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(55,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(60,2): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(57,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
 C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(62,2): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
 C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(64,2): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
-C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(558,5): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(480,6): warning C4101: 'opc': variable local sin referencia
-C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(626): warning C4715: 'Ganador': no todas las rutas de acceso de control devuelven un valor
+C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(66,2): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(572,5): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(494,6): warning C4101: 'opc': variable local sin referencia
+C:\Users\Astorkpo\source\repos\-DamasChinas-\ConsoleApplication7\ConsoleApplication7.cpp(641): warning C4715: 'Ganador': no todas las rutas de acceso de control devuelven un valor
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   ConsoleApplication7.vcxproj -> C:\Users\Astorkpo\source\repos\-DamasChinas-\x64\Debug\ConsoleApplication7.exe
