@@ -1,0 +1,13 @@
+Instrucciones:
+
+1-Para mover la ficha:
+	Arriba a la izquierda, se le debe restar 1 a y(y-1) y 2 a x (x-2)
+	Arriba a la derecha , se le debe restar 1 a y (y-1) y sumar 2 a x (x+2)
+	Abajo a la izquierda, se le debe sumar 1 a y(y+1) y restar 2 a x (x-2)
+	Abajo a la derecha, se le debe sumar 1 a y(y+1) y sumar 2 a x (x+2)
+
+2-Si el jugador realiza mal un movimiento pierde el turno.
+
+3- Se puede realizar salto doble unica mente cuando hay una ficha de por medio
+
+4- Para ganar se debe tener todas las fichas en el lado opuesto del que se comienza
